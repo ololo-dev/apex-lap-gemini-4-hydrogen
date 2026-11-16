@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Kestrel R9 — Sunburst Ridge Circuit</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="viewport"></div>
+
+      <div class="hud-top-left">
+        <div class="brand">KESTREL R9 <span class="circuit-tag">SUNBURST RIDGE</span></div>
+        <div class="lap-panel">
+          <div class="lap-row main-lap">
+            <span class="label">POS</span>
+            <span id="hud-pos" class="value">4 / 4</span>
+          </div>
+          <div class="lap-row main-lap">
+            <span class="label">LAP</span>
+            <span id="hud-lap" class="value">1 / 3</span>
+          </div>
+          <div class="lap-row">
+            <span class="label">CURRENT</span>
+            <span id="hud-current-time" class="value mono">0:00.00</span>
+          </div>
+          <div class="lap-row">
+            <span class="label">LAST</span>
+            <span id="hud-last-time" class="value mono">--:--.--</span>
+          </div>
+          <div class="lap-row">
+            <span class="label">BEST</span>
+            <span id="hud-best-time" class="value mono accent">--:--.--</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="hud-countdown" class="countdown-banner">3</div>
+      <div id="hud-offroad" class="offroad-banner">OFF ROAD — HELD TO 72 KM/H</div>
+
+      <div id="hud-results" class="results-overlay">
+        <div class="results-card">
+          <div class="results-header">
+            <div class="results-title">RACE RESULTS</div>
+            <div class="results-subtitle">SUNBURST RIDGE — 3 LAPS</div>
+          </div>
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>POS</th>
+                <th>CAR</th>
+                <th class="num">RACE TIME</th>
+                <th class="num">BEST LAP</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+          <div class="results-actions">
+            <button id="btn-new-race" class="hud-btn active" type="button">NEW RACE [R]</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hud-top-right">
+        <button id="btn-demo" class="hud-btn" type="button">DEMO MODE [M]</button>
+        <button id="btn-reset" class="hud-btn secondary" type="button">NEW RACE [R]</button>
+      </div>
+
+      <div class="minimap-panel">
+        <canvas id="hud-minimap" width="150" height="150"></canvas>
+      </div>
+
+      <div class="hud-bottom-left controls-legend">
+        <div><kbd>W</kbd> / <kbd>↑</kbd> Accelerate</div>
+        <div><kbd>S</kbd> / <kbd>↓</kbd> Brake / Reverse</div>
+        <div><kbd>A</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>→</kbd> Steer</div>
+        <div><kbd>Shift</kbd> / <kbd>Space</kbd> Boost</div>
+        <div><kbd>M</kbd> Demo &nbsp; <kbd>R</kbd> New Race</div>
+      </div>
+
+      <div class="hud-bottom-right speed-cluster">
+        <div id="hud-speed" class="speed-value">0</div>
+        <div class="speed-unit">KM/H</div>
+        <div class="boost-row">
+          <span class="boost-label">BOOST</span>
+          <div class="boost-track">
+            <div id="hud-boost-bar" class="boost-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="touch-controls" class="touch-controls">
+        <div class="touch-group touch-steer">
+          <button id="touch-left" class="touch-btn" type="button" aria-label="Steer Left">◀</button>
+          <button id="touch-right" class="touch-btn" type="button" aria-label="Steer Right">▶</button>
+        </div>
+        <div class="touch-group touch-pedals">
+          <button id="touch-brake" class="touch-btn brake" type="button">BRAKE</button>
+          <button id="touch-boost" class="touch-btn boost" type="button">BOOST</button>
+          <button id="touch-gas" class="touch-btn gas" type="button">GAS</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
